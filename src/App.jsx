@@ -13,7 +13,7 @@ const App = () => {
       </Flex>
       <Flex direction={'column'}>
         <Console />
-        <Button outline brColor={'green'} color={'green'} align={'flex-end'}>Send</Button>
+        <Button background={'green'} color={'green'} align={'flex-end'}>Send</Button>
       </Flex>
     </AppWrapper>
   )
