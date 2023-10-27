@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const StyledButton = styled.button`
 	border: none;
@@ -10,6 +10,17 @@ const StyledButton = styled.button`
 	&:focus {
 		outline: none;
 	}
+
+	${props => props.primary && css `
+		color: ${props => props.color || 'white'};
+		background-color: ${props => props.bgColor || 'white'};
+	`}
+
+	${props => props.outline && css `
+		color: ${props => props.color || 'white'};
+		background: transparent;
+		border: 1px solid ${props => props.brColor || 'white'};
+	`}
 `
 
 export const Button = (props) => {
