@@ -11,9 +11,9 @@ const App = () => {
       <Flex justify={'center'}>
         <Title color={'green'}>Console cmd 2023. IT-BRAINS</Title>
       </Flex>
-      <Flex direction={'column'}>
-        <Console />
-        <Button background={'green'} color={'green'} align={'flex-end'}>Send</Button>
+      <Flex direction={'column'} margin={'14px 0'}>
+        <Console color={'green'} />
+        <Button background={'green'} color={'green'} align={'flex-end'} size={'24px'}>Send</Button>
       </Flex>
     </AppWrapper>
   )
