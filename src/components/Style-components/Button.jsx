@@ -27,7 +27,7 @@ const StyledButton = styled.button.attrs(({
 	${props => props.outline && css `
 		color: ${props => props.color || 'white'};
 		background: transparent;
-		border: 1px solid ${props => props.background || 'white'};
+		border: 1px solid ${props => props.color || props.theme.colors.primary};
 	`}
 
 &:focus {
@@ -42,11 +42,10 @@ const StyledButton = styled.button.attrs(({
 //! Пиклад як можна розширювати існуючі стилізовані компоненти
 const LargeButton = styled(StyledButton)`
 	font-size: 32px;
+	color: ${props => props.color || props.theme.colors.primary};
 `
 
 
 export const Button = (props) => {
 	return <LargeButton {...props} />
 }
-
-export default Button

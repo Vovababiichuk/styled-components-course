@@ -3,16 +3,29 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { Global } from './AppStyle.js'
-import { StyleSheetManager } from 'styled-components';
+import { StyleSheetManager, ThemeProvider } from 'styled-components';
 
 const shouldForwardProp = (prop) => !['align'].includes(prop);
 
+//! Глобальні теми
+const theme = {
+  colors: {
+    primary: 'green',
+    secondary: '#001e3c',
+  },
+  media: {
+    mobile: '(max-width: 425px)',
+    tablet: '(max-width: 768px) and (min-width: 425px)',
+  }
+}
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StyleSheetManager shouldForwardProp={shouldForwardProp}>
     <React.StrictMode>
-      <Global />
-      <App />
+      <ThemeProvider theme={theme}>
+        <Global />
+        <App />
+      </ThemeProvider >
     </React.StrictMode>,
   </StyleSheetManager>,
 )
